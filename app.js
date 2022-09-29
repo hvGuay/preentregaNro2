@@ -25,7 +25,7 @@ stockProductos.forEach((producto) => {
     div.innerHTML = `
     <img src=${producto.img} alt= "">
     <h3>${producto.nombre}</h3>
-    <p>${producto.desc}</p>
+    <p>Duración: ${producto.desc}</p>
     <p class="precioProducto">Precio:$ ${producto.precio}</p>
     <button id="agregar${producto.id}" class="boton-agregar">Agregar <i class="fas fa-shopping-cart"></i></button>
     `
@@ -45,6 +45,14 @@ const agregarAlCarrito = (prodId) => {
                 prod.cantidad++
             }
         })
+        /* Agrego SweetAlert para avisar al usuario que se agregó el curso al carrito, confirmandolo de manera evidente */
+        Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: `Curso agregado al carrito`,
+            showConfirmButton: false,
+            timer: 1000
+          })
     } else {
         const item = stockProductos.find((prod) => prod.id === prodId)
         carrito.push(item)
@@ -70,7 +78,7 @@ const actualizarCarrito = () => {
         <p>${prod.nombre}</p>
         <p>Precio:$${prod.precio}</p>
         <p>Cantidad: <span id="cantidad">${prod.cantidad}</span></p>
-        <button onclick="eliminarDelCarrito(${prod.id})" class="boton-eliminar"><i class="fas fa-trash-alt"></i></button>
+        <button onclick="eliminarDelCarrito(${prod.id})" class="boton-eliminar d-flex center"><i class="fas fa-trash-alt"></i></button>
         `
         contenedorCarrito.appendChild(div)        
         localStorage.setItem('carrito', JSON.stringify(carrito))

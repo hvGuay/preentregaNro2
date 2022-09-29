@@ -1,9 +1,10 @@
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+.barra {
+    display: flex;
+    z-index: +1;
+    position: sticky;
+    top: 0%;
+    }
 
 body{
     font-family: 'Roboto', sans-serif;
@@ -16,8 +17,8 @@ img {
 #boton-carrito {
     border: none;
     color: rgb(80, 80, 80);
-    font-size: 40px;
-    background-color: white;
+    font-size: 20px;  
+    background-color: rgb(247, 247, 247);
     border-radius: 10%;
     padding: 10px 10px;
     transition: all .3s;
@@ -52,18 +53,25 @@ p {
     font-weight: 700;
 }
 .boton-agregar {
-    background-color: royalblue;
-    color: white;
-    font-size: 18px;
+    background-color: rgb(96, 172, 216);
+    color: rgb(255, 255, 255);
+    font-size: 14px;
     font-weight: 700;
     padding: 5px;
-    border: none;
+    border: solid black 2px;
+    border-radius: 20px;
 }
 .boton-agregar:hover {
     cursor: pointer;
 }
 .boton-agregar:focus {
     outline: none;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 .modal-contenedor {
@@ -99,7 +107,7 @@ p {
 }
 
 .modal-carrito h3 {
-    color: royalblue;
+    color: rgb(75, 104, 99);
     padding-bottom: 5px;
 }
 .modal-carrito #carritoCerrar {
@@ -107,7 +115,7 @@ p {
     top: 15px;
     right: 15px;
     font-size: 20px;
-    color: royalblue;
+    color: rgb(189, 189, 189);
     border: none;
     background-color: white;
 }
@@ -123,21 +131,20 @@ p {
 }
 
 .productoEnCarrito {
-    border-left: 5px solid lightblue;
-    border-bottom-left-radius: 3px;
-    border-top-left-radius: 3px;
+    border-left: 2px solid rgb(80, 80, 80);
     margin: 5px 0;
     padding: 5px 10px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 .productoEnCarrito:hover {
-    border-left: 5px solid royalblue;
+    border-left: 2px solid rgb(8, 218, 255);
 }
 
 .boton-eliminar {
     background-color: white;
-    color: red;
+    color: rgb(56, 56, 56);
     border: none;
     font-size: 20px;
 }

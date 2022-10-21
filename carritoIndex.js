@@ -8,7 +8,7 @@ const carritoIndex = (productoId)=>{
         let producto  = productos.find( producto => producto.id == productoId )
         carritoDeCompras.push(producto)
         console.log(carritoDeCompras);
-
+        
         producto.cantidad = 1
 
         let div = document.createElement("div")
